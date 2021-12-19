@@ -6,16 +6,14 @@ from bs4 import BeautifulSoup
 
 rm_url = "http://10.77.1.70/" # Боевой
 #rm_url = "http://10.77.1.60/" # Тестовый
-api_key = "762a0212b89630a2e83c77fdd5b71c70739daf45" #70
-#api_key = "4de8d2365b04c77f605ed100f3636be0166948f0" #60
+api_key = "api_key" #70
 rm_project = "it"
 redmine = Redmine(url=rm_url, key=api_key)
 file='/scripts/auto_create_issues_from_email/1.xlsx'
-mail1='rep@vox-com.ru'
-mail2='solominns@zdrav.mos.ru'
-#mail2='abzaliyev.valentin@vox-com.ru'
+mail1=''
+mail2=''
 
-with MailBox('imap.yandex.com').login('naumen_stp_report@vox-com.ru', 'qwe123QWE') as mailbox: #коннектимся к почте и смотрим последнее письмо, скачиваем файл из письма
+with MailBox('imap.yandex.com').login('mail', 'password') as mailbox: #коннектимся к почте и смотрим последнее письмо, скачиваем файл из письма
     uid=[]
     uid=[msg.uid for msg in mailbox.fetch()]
     from1=[]
